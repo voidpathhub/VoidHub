@@ -1,53 +1,12 @@
-local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
 
-local Window = WindUI:CreateWindow({
-    Title = "VoidPath Hub",
-    Icon = "gem",
-    Author = "by Ryan",
-    Folder = "CloudHub",
-    Size = UDim2.fromOffset(580, 460),
-    Transparent = true,
-    Theme = "Dark",
-    Resizable = true,
-    SideBarWidth = 200,
-    Background = "", -- rbxassetid only
-    BackgroundImageTransparency = 0.42,
-    HideSearchBar = true,
-    ScrollBarEnabled = false,
-    User = {
-        Enabled = true,
-        Anonymous = true,
-        Callback = function()
-            print("clicked")
-        end,
-    },
-    KeySystem = { -- <- ↓ remove this all, if you dont neet the key system
-        Key = { "1234" },
-        Note = "VoidPath Key System.",
-        Thumbnail = {
-            Image = "rbxassetid://",
-            Title = "Thumbnail",
-        },
-        URL = "https://github.com/Footagesus/WindUI",
-        SaveKey = true,
-    },
-})
+]]--
 
---Tabs
-local MainTab = Window:Tab({
-    Title = "Main",
-    Icon = "sailboat",
-    Locked = false,
-})
-
---Toggles
-local Toggle = MainTab:Toggle({
-    Title = "Auto Farm",
-    Desc = "Auto Farms",
-    Icon = "repeat",
-    Type = "Checkbox",
-    Default = false,
-    Callback = function(state) 
-        print("Toggle Activated" .. tostring(state))
-    end
-})
+local v0=loadstring(game:HttpGet("https://sirius.menu/rayfield"))();local v1=loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostDuckyy/ESP-Library/main/Kiriot22/source.lua"))();v1.Name=true;v1.TeamColor=false;v1.Tracers=false;v1.Boxes=false;local v6=game:GetService("Players");local v7=game:GetService("RunService");local v8=game:GetService("UserInputService");local v9=game:GetService("Lighting");local v10=v6.LocalPlayer;local v11=workspace.CurrentCamera;local v12=v0:CreateWindow({Name=" VoidPath | SCP Roleplay ",Icon=0 -0 ,LoadingTitle=" VoidPath | SCP Roleplay ",LoadingSubtitle="By Ryan",ShowText="Rayfield",Theme="Amethyst",ToggleUIKeybind="K",ConfigurationSaving={Enabled=true,FolderName=nil,FileName="Big Hub"}});local v13=v12:CreateTab("Introduction","info");v13:CreateLabel("Welcome to VoidPath SCP Roleplay Hub!");v13:CreateLabel("Version 1.1 | Author: Ryan");v13:CreateButton({Name="Copy Discord Invite",Callback=function() setclipboard("https://discord.gg/ssnKXk7J8G");v0:Notify({Title="Copied to Clipboard",Content="Discord invite link copied!",Duration=5,Image=4483363455 -(915 + 82) });end});v0:Notify({Title="Welcome to VoidPath",Content="You're now running the SCP: Roleplay hub.",Duration=6.5,Image=4483362458 -0 });local v14=v12:CreateTab("Combat","crosshair");local v15=v12:CreateTab("Character","user");local v16=v12:CreateTab("Misc","settings");v14:CreateToggle({Name="ESP",CurrentValue=false,Flag="ESP",Callback=function(v37) v1:Toggle(v37);end});v14:CreateToggle({Name="ESP Tracers",CurrentValue=false,Flag="ESPTracers",Callback=function(v38) v1.Tracers=v38;end});v14:CreateToggle({Name="ESP Boxes",CurrentValue=false,Flag="ESPBoxes",Callback=function(v40) v1.Boxes=v40;end});v14:CreateToggle({Name="ESP TeamColor",CurrentValue=false,Flag="ESPTeamColor",Callback=function(v42) v1.TeamColor=v42;end});local v17;v15:CreateToggle({Name="Noclip",CurrentValue=false,Flag="Noclip",Callback=function(v44) local v45=v10.Character;if  not v45 then return;end if v44 then v17=v7.Stepped:Connect(function() for v78,v79 in ipairs(v45:GetDescendants()) do if v79:IsA("BasePart") then v79.CanCollide=false;end end end);else local v65=0 + 0 ;while true do if (v65==(0 -0)) then if v17 then v17:Disconnect();end for v84,v85 in ipairs(v45:GetDescendants()) do if v85:IsA("BasePart") then v85.CanCollide=true;end end break;end end end end});local v18={Brightness=v9.Brightness,ClockTime=v9.ClockTime,FogEnd=v9.FogEnd,Ambient=v9.Ambient,OutdoorAmbient=v9.OutdoorAmbient};local v19;v16:CreateToggle({Name="Fullbright",CurrentValue=false,Flag="Fullbright",Callback=function(v46) if v46 then v19=v7.RenderStepped:Connect(function() local v69=1187 -(1069 + 118) ;while true do if (v69==(2 -1)) then v9.FogEnd=10000000000;v9.Ambient=Color3.new(1 -0 ,1 + 0 ,1 -0 );v69=7 -5 ;end if ((2 + 0)==v69) then v9.OutdoorAmbient=Color3.new(1 + 0 ,1 + 0 ,1);break;end if (v69==(791 -(368 + 423))) then v9.Brightness=6 -4 ;v9.ClockTime=30 -(10 + 8) ;v69=1 + 0 ;end end end);else local v66=0 -0 ;while true do if (v66==(442 -(416 + 26))) then if v19 then v19:Disconnect();end for v91,v92 in pairs(v18) do v9[v91]=v92;end break;end end end end});v16:CreateButton({Name="Exit GUI",Callback=function() local v47=0 -0 ;local v48;while true do if (v47==(0 -0)) then v48=game:GetService("CoreGui"):FindFirstChild("Rayfield");if v48 then v0:Destroy();end break;end end end});local v20=false;local v21=false;local v22=100;local v23=Color3.fromRGB(110 + 145 ,0 -0 ,438 -(145 + 293) );local v24=Drawing.new("Circle");v24.Visible=false;v24.Thickness=431 -(44 + 386) ;v24.NumSides=1586 -(998 + 488) ;v24.Radius=v22;v24.Color=v23;v24.Filled=false;local function v31() local v49=0 + 0 ;local v50;local v51;while true do if (v49==(1 + 0)) then return v50;end if (v49==(1850 -(1409 + 441))) then v50,v51=nil,v22;for v80,v81 in ipairs(v6:GetPlayers()) do if ((v81~=v10) and v81.Character and v81.Character:FindFirstChild("HumanoidRootPart")) then if (v21 and (v81.Team==v10.Team)) then continue;end local v94,v95=v11:WorldToViewportPoint(v81.Character.HumanoidRootPart.Position);if v95 then local v109=772 -(201 + 571) ;local v110;while true do if (v109==(1138 -(116 + 1022))) then v110=(v8:GetMouseLocation() -Vector2.new(v94.X,v94.Y)).Magnitude;if (v110<v51) then local v135=0;while true do if ((0 -0)==v135) then v51=v110;v50=v81;break;end end end break;end end end end end v49=1;end end end v7.RenderStepped:Connect(function() v24.Position=v8:GetMouseLocation();v24.Radius=v22;v24.Color=v23;v24.Visible=v20;if (v20 and v8:IsMouseButtonPressed(Enum.UserInputType.MouseButton1)) then local v67=0;local v68;while true do if (v67==(438 -(262 + 176))) then v68=v31();if (v68 and v68.Character and v68.Character:FindFirstChild("HumanoidRootPart")) then v11.CFrame=CFrame.new(v11.CFrame.Position,v68.Character.HumanoidRootPart.Position);end break;end end end end);v14:CreateToggle({Name="Enable Aimbot",CurrentValue=false,Flag="EnableAimbot",Callback=function(v56) v20=v56;end});v14:CreateToggle({Name="Team Check",CurrentValue=false,Flag="AimbotTeamCheck",Callback=function(v57) v21=v57;end});v14:CreateSlider({Name="FOV Radius",Range={738 -(198 + 490) ,1325 -1025 },Increment=11 -6 ,CurrentValue=v22,Flag="AimbotFOV",Callback=function(v58) v22=v58;end});v14:CreateColorPicker({Name="FOV Circle Color",Color=v23,Flag="FOVColor",Callback=function(v59) v23=v59;end});local v32=false;local v33=2 + 1 ;local v34={};local v35={};local v36=v14:CreateSection("HitBox");v14:CreateToggle({Name="Enable Hitbox Expander",CurrentValue=false,Callback=function(v60) local v61=0 -0 ;while true do if (v61==0) then v32=v60;if  not v60 then local v82=0;while true do if (v82==(3 -2)) then v35={};break;end if ((859 -(814 + 45))==v82) then for v123,v124 in pairs(v6:GetPlayers()) do if ((v124~=v10) and v124.Character and v124.Character:FindFirstChild("Head")) then local v128=0 -0 ;local v129;local v130;while true do if (v128==1) then v129.Transparency=0 -0 ;v129.Material=Enum.Material.Plastic;v128=1 + 1 ;end if (v128==(0 + 0)) then v129=v124.Character.Head;if v34[v124.UserId] then v129.Size=v34[v124.UserId];else v129.Size=Vector3.new(887 -(261 + 624) ,1,1 + 0 );end v128=1 + 0 ;end if (v128==(4 -1)) then v130=v129:FindFirstChild("HeadESP");if v130 then v130:Destroy();end break;end if (v128==(1082 -(1020 + 60))) then v129.CanCollide=true;if (v35[v124.UserId] and  not v129:FindFirstChildWhichIsA("SpecialMesh")) then v35[v124.UserId].Parent=v129;end v128=1426 -(630 + 793) ;end end end end v34={};v82=203 -(14 + 188) ;end end end break;end end end});v14:CreateSlider({Name="Head Size",Range={676 -(534 + 141) ,3 + 3 },Increment=0.1 + 0 ,Suffix="X",CurrentValue=v33,Callback=function(v62) v33=v62;end});v7.RenderStepped:Connect(function() if  not v32 then return;end for v63,v64 in pairs(v6:GetPlayers()) do if ((v64~=v10) and v64.Character and v64.Character:FindFirstChild("Head")) then local v70=0 -0 ;local v71;local v72;local v73;local v74;local v75;local v76;local v77;while true do if (v70==(0 + 0)) then v71=v64.Character.Head;if  not v34[v64.UserId] then v34[v64.UserId]=v71.Size;end if  not v35[v64.UserId] then local v113=v71:FindFirstChildWhichIsA("SpecialMesh");if v113 then v113.Parent=nil;v35[v64.UserId]=v113;end end v70=3 -2 ;end if (v70==(8 -4)) then v75=v71.Position-v74 ;v76=RaycastParams.new();v76.FilterDescendantsInstances={v10.Character};v70=7 -2 ;end if (v70==(1749 -(760 + 987))) then v71.CanCollide=false;v71.Material=Enum.Material.ForceField;v73=v71:FindFirstChild("HeadESP");v70=1916 -(1789 + 124) ;end if (v70==5) then v76.FilterType=Enum.RaycastFilterType.Blacklist;v77=workspace:Raycast(v74,v75.Unit * v75.Magnitude ,v76);if (v77 and v77.Instance and v77.Instance:IsDescendantOf(v64.Character)) then local v114=766 -(745 + 21) ;while true do if (v114==(0 + 0)) then v73.Transparency=0.5 + 0 ;v73.ZIndex=13 -8 ;break;end end else local v115=0 -0 ;while true do if (v115==(0 + 0)) then v73.Transparency=1 + 0 ;v73.ZIndex=1055 -(87 + 968) ;break;end end end break;end if (v70==(13 -10)) then if  not v73 then v73=Instance.new("BoxHandleAdornment");v73.Name="HeadESP";v73.Adornee=v71;v73.AlwaysOnTop=true;v73.ZIndex=5 + 0 ;v73.Transparency=0.5 -0 ;v73.Color3=Color3.fromRGB(1668 -(447 + 966) ,0,0 -0 );v73.Parent=v71;end v73.Size=v72;v74=v11.CFrame.Position;v70=11 -7 ;end if (v70==(2 -1)) then v72=Vector3.new(v33,v33,v33);v71.Size=v72;v71.Transparency=1;v70=1819 -(1703 + 114) ;end end end end end);
